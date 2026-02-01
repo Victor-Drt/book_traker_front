@@ -14,7 +14,7 @@
   }
   
   /* Input de pesquisa */
-  .input__search {
+  .inputSearch {
     width: 100%;
     padding: 12px 15px;
     margin-bottom: 20px;
@@ -23,7 +23,7 @@
     font-size: 16px;
   }
   
-  .input__search:focus {
+  .inputSearch:focus {
     outline: none;
     border-color: #4f46e5;
   }
@@ -54,14 +54,14 @@
     color: #fff;
   }
     
-  .page-header {
+  .pageHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
   }
   
-  .btn-primary {
+  .btnPrimary {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -73,7 +73,53 @@
     font-weight: 500;
   }
   
-  .btn-primary:hover {
-    background-color: #1d4ed8;
+.btnPrimary:hover {
+  background-color: #1d4ed8;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
   }
+
+  .pageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .pageHeader h1 {
+    font-size: 1.4rem;
+  }
+
+  .inputSearch {
+    padding: 10px 12px;
+    font-size: 16px; /* evita zoom no iOS */
+  }
+
+  .filtros ul {
+    gap: 8px;
+  }
+
+  .filtros li {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+  }
+
+  .pageHeader h1 {
+    font-size: 1.25rem;
+  }
+
+  .btnPrimary {
+    width: 100%;
+    justify-content: center;
+  }
+}
   

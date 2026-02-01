@@ -65,10 +65,41 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 15px;
+      padding: 14px 16px;
     }
-  
+
+    .container__livros_lidos h4 {
+      font-size: 16px;
+    }
+
+    .container__livros_lidos p {
+      font-size: 13px;
+    }
+
     .acoes {
       width: 100%;
       justify-content: space-between;
+    }
+
+    .acoes button {
+      padding: 6px 10px;
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card__livros {
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+
+    .acoes {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .acoes button {
+      flex: 1;
+      min-width: 80px;
     }
   }

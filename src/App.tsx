@@ -1,14 +1,15 @@
 import './App.css'
-import BooksPage from './pages/books/BooksPage/BooksPage';
 import { Outlet } from 'react-router-dom';
+import Sidebar from './components/Sidebar/Sidebar';
 
 function App() {
 
   return (
-    <>
+    <div className="appLayout">
+      <Sidebar />
       <Outlet />
-    </>
+    </div>
   );
 }
 
-export default App
+export default App;

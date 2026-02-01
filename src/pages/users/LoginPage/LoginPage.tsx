@@ -19,7 +19,7 @@ const LoginPage = () => {
       setLoading(true);
       const response = await login({ username, password });
       localStorage.setItem('token', response.access);
-      navigate('/books');
+      navigate('/');
     } catch (error) {
       setError("Invalid username or password");
       setErrorBorder('red');

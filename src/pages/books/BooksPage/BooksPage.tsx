@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import CardBook from '../../../components/books/CardBook/CardBook';
 import styles from './books-page.module.css';
+import { FiPlus } from 'react-icons/fi';
 // import { FiPlus } from 'react-icons/fi';
 // import { Link } from 'react-router-dom';
 
@@ -25,20 +27,19 @@ export default function BooksPage() {
     return (
         <div className={styles.container}>
 
-            <div className={styles.page_header}>
-                <h1>Livros</h1>
+            <div className={styles.pageHeader}>
+                <h1>Books</h1>
 
-                {/* <Link to="/book-create" className={styles.btn_primary}>
+                <Link to="/books/create" className={styles.btnPrimary}>
                     <FiPlus />
-                    Novo livro
-                </Link> */}
-                <a className={styles.btn_primary} href="#"></a>
+                    New Book
+                </Link>
             </div>
 
             <input
                 type="text"
                 placeholder="Pesquise o livro"
-                className={styles.input_search}
+                className={styles.inputSearch}
             />
 
             <div className={styles.filtros}>
