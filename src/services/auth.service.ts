@@ -10,9 +10,32 @@ interface LoginRequest {
     password: string;
 }
 
+interface SignupRequest {
+    username: string;
+    email: string;
+    password: string;
+}
+
+interface SignupResponse {
+    username: string;
+    email: string;
+    date_joined: string;
+}
+
+
+
 export const login = async (loginRequest: LoginRequest): Promise<LoginResponse> => {
     try {
         const response = await api.post('/api/token/', loginRequest);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+}
+
+export const signup = async (signupRequest: SignupRequest): Promise<SignupResponse> => {
+    try {
+        const response = await api.post('/users/', signupRequest);
         return response.data;
     } catch (error) {
         throw error;

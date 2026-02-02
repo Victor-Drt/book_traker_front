@@ -13,12 +13,14 @@ import ProgressPage from './pages/progress/ProgressPage/ProgressPage.tsx'
 import RecommendationsPage from './pages/recommendations/RecommendationsPage/RecommendationsPage.tsx'
 import StatsPage from './pages/stats/StatsPage/StatsPage.tsx'
 import HistoryPage from './pages/history/HistoryPage/HistoryPage.tsx'
+import CreateUserPage from './pages/users/CreateUserPage/CreateUserPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
       <Routes>
     
         <Route path='/login' element={<LoginPage />} />
+        <Route path='/signup' element={<CreateUserPage />} />
         
         <Route path='/' element={<PrivateRoute><App /></PrivateRoute>}>
           <Route index element={<BooksPage />}  />

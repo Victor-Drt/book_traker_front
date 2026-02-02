@@ -70,7 +70,7 @@ const LoginPage = () => {
 
           <p className={styles.footerText}>
             Don't have an account?{" "}
-            <a href="/register">Register</a>
+            <a href="/signup">Register</a>
           </p>
         </form>
       </aside>
