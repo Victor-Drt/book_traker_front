@@ -2,27 +2,36 @@ import { Link } from 'react-router-dom';
 import CardBook from '../../../components/books/CardBook/CardBook';
 import styles from './books-page.module.css';
 import { FiPlus } from 'react-icons/fi';
+import { useEffect, useState } from 'react';
+import { fetchBooks, type Book } from '../../../services/books_service';
 // import { FiPlus } from 'react-icons/fi';
 // import { Link } from 'react-router-dom';
 
 export default function BooksPage() {
 
-    const books = [
-        {
-            titulo: "As Aventuras de nao sei quem lá",
-            autor: "Joaozinho Teste",
-            categoria: "Ação",
-            paginas_lidas: 115,
-            percentual_concluido: 100
-        },
-        {
-            titulo: "Um Romance aleatorio",
-            autor: "Joaozinho Teste 2",
-            categoria: "Romance",
-            paginas_lidas: 50,
-            percentual_concluido: 100
-        },
-    ]
+    const [books, setBooks] = useState<Book[]>([]);
+
+    useEffect(() => {
+        const loadBooks = async () => {
+            try {
+                const data = await fetchBooks();
+
+                const formattedBooks: Book[] = data.results.map((book) => ({
+                    titulo: book.title,
+                    autor: book.author,
+                    categoria: book.category,
+                    paginas_lidas: book.total_pages_read,
+                    percentual_concluido: book.percent_finished,
+                }));
+
+                setBooks(formattedBooks);
+            } catch (error) {
+                console.error("Erro ao buscar livros:", error);
+            }
+        };
+
+        loadBooks();
+    }, []);
 
     return (
         <div className={styles.container}>
